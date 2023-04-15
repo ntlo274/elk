@@ -43,3 +43,7 @@ Set
 
 xpack.security.enabled: false
 and then start Elasticsearch.
+
+curl -XGET http://192.168.1.254:9200
+curl -XGET http://192.168.1.254:9200/_cluster/health?pretty
+
