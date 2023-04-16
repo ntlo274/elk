@@ -18,7 +18,7 @@ sleep 2s
 
 
 
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o -y /usr/share/keyrings/elasticsearch-keyring.gpg
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -y -o /usr/share/keyrings/elasticsearch-keyring.gpg
 
 echo ""
 echo ""
