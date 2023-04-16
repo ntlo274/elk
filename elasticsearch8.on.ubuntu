@@ -1,3 +1,4 @@
+#install Elastic Search 8.0 on Ubuntu 20.04
 #!/bin/bash
 echo "Installing Elastic Search..."
 echo ""
