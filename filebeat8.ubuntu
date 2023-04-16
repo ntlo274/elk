@@ -1,0 +1,58 @@
+#install File Beat 8.0 on Ubuntu 20.04
+#!/bin/bash
+echo "Installing File Beat..."
+echo ""
+echo "Updating Packages..."
+echo ""
+echo ""
+sleep 2s
+
+sudo apt update
+
+echo ""
+echo ""
+echo "Install Prerequisite Packages..."
+echo ""
+echo ""
+sleep 2s
+
+
+
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+
+echo ""
+echo ""
+echo "Install APT Repository for File Beat..."
+echo ""
+echo ""
+sleep 2s
+
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
+
+echo ""
+echo ""
+echo "Updating Repository..."
+echo ""
+echo ""
+sleep 2s
+
+sudo apt-get update
+
+echo ""
+echo ""
+echo "Installing File Beat..."
+echo ""
+echo ""
+sleep 2s
+
+sudo apt-get install filebeat
+
+echo ""
+echo ""
+echo "Starting Elastic Search..."
+echo ""
+echo ""
+sleep 2s
+
+sudo systemctl enable --now filebeat
+sudo systemctl status filebeat
